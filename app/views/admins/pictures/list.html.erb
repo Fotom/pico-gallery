@@ -1,0 +1,17 @@
+<p>
+  <%= link_to t("picture_view.add"), :action => "new" %>
+</p>
+
+<% if !@pictures.blank? %>
+
+  <%= will_paginate @pictures %>
+
+  <%= render :partial => 'list' %>
+
+  <%= will_paginate @pictures %>
+
+<% end %>
+
+<p>
+  <%= link_to t("picture_view.add"), :action => "new" %>
+</p>

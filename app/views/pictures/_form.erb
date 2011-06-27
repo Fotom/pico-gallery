@@ -1,0 +1,14 @@
+<%= custom_error_messages_for 'picture' %>
+
+<p><%= t("picture_view.picture") %></p>
+<p><%= f.file_field(:photo) %></p>
+
+<p><%= t("picture_view.part") %></p>
+<p>
+  <select name="part_id">
+    <% for part in @parts %>
+      <option value="<%= part.id %>"><%= t("part_names.#{part.id}", :default => part.name) %></option>
+    <% end %>
+  </select>
+</p>
+<br/>

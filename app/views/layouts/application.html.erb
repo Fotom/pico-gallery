@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name='yandex-verification' content='7ebeb1c2b846415e' />
+    <link rel="shortcut icon" href="/flower.ico" />
+    <%= title :disable_site => true, :separator => "-", :reverse => true, :site => t("layout.title") %>
+    <%= stylesheet_link_tag 'common' %>
+    <%= stylesheet_link_tag 'facebox' %>
+    <%= javascript_include_tag 'application.js' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+    <%= javascript_include_tag 'facebox.js' %>
+    <!--Social buttons-->
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $.facebox.settings.closeImage = '/images/closelabel.png'
+      $.facebox.settings.loadingImage = '/images/loading.gif'
+      jQuery(document).ready(function($) {
+        $('a[rel*=facebox]').facebox({
+        })
+      })
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19307316-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+
+    <table class="header_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <!-- ======== Header ======== -->
+      <tr>
+        <td class="common_color georgia_font">
+          <div style="width:100%; height:70px; background-color: white; background-image:url(/images/rect3875.png); background-repeat:repeat-x; border-bottom: solid 2px #c6c7c2;">
+            <br/><!--<a href="#" style="font-size: 36px;">PhotoLove</a>-->
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="common_color georgia_font" height="20px">
+          <div style="padding-left: 5px; margin-top: -77px;">
+            <%= link_to image_tag("/images/logo_small.png"), :controller => 'pictures', :id => nil %>
+          </div>
+         <div style="float: right; margin-top: -67px; padding: 0px 12px 0px 0px;">
+           <a href="/en"><img alt="English" height="12" src="/picto/en.png" title="English" width="16" /></a>
+           <a href="/"><img alt="Русский" height="12" src="/picto/ru.png" title="Русский" width="16" /></a>
+         </div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" height="700px">
+            <tr>
+              <!-- ======== Left Block ======== -->
+              <td width="190px" valign="top" class="common_color georgia_font">
+                <table width="190px" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <ul id="vert_menu">
+                        <li><%= link_to t("layout.all"), {:controller => 'pictures', :action => 'index', :id => ''} %></li>
+                        <% for part in @parts %>
+                          <li><%= link_to t("part_names.#{part.id}", :default => part.name), {:controller => 'pictures', :action => 'list', :id => part.id} %></li>
+                        <% end %>
+                      </ul>
+                      <br/>
+                      <h3 class="common_center"><%= t("layout.new") %></h3>
+                      <br/>
+                      <% if !@newest_pictures.blank? %>
+                        <table width="100%">
+                          <tr><td width="17px"></td><td></td><td width="10px"></td></tr>
+                          <% for picture in @newest_pictures %>
+                            <tr>
+                              <td></td>
+                              <td>
+                                <div>
+                                  <% if picture && picture.photo && picture.photo.exists? %>
+                                    <div class="ngg-gallery-thumbnail">
+                                      <a href="<%= picture.photo.url() %>" rel="facebox" class="thickbox">
+                                        <%= image_tag picture.photo.url(:thumb) %>
+                                      </a>
+                                    </div>
+                                  <% end %>
+                                </div><br/>
+                              </td>
+                              <td></td>
+                            </tr>
+                          <% end %>
+                        </table>
+                      <% end %>
+                      <br/>
+                      <div class="common_center"><%= link_to t("layout.add_pictures"), :controller => 'pictures', :action => 'new' %></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <!-- ======== Center Block ======== -->
+              <td valign="top" class="common_color">
+
+                <table width="100%">
+                  <tr>
+                    <td valign="top">
+                      <div id="rounded-box-3">
+                        <b class="r3"></b><b class="r1"></b><b class="r1"></b>
+                        <div class="inner-box-3">
+                          <div class="common_padding">
+                            <%= header_content %>
+                          </div>
+                        </div>
+                        <b class="r1"></b><b class="r1"></b><b class="r3"></b>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="5px">
+                    <td valign="top"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+
+                      <div id="rounded-box-3">
+                        <b class="r3"></b><b class="r1"></b><b class="r1"></b>
+                        <div class="inner-box-3">
+
+                          <div style="margin: 5px 5px 5px 0px; WIDTH: 505px;">
+                          </div>
+
+                          <table cellpadding="5" width="100%" height=800px class="common_padding">
+                            <tr>
+                              <td valign="top">
+
+                                <br/>
+                                <% if flash[:notice] != nil -%>
+                                  <p class="notice"><%= flash[:notice] %></p>
+                                <% end -%>
+                                <% if flash[:error] != nil -%>
+                                  <p class="error"><%= flash[:error] %></p>
+                                <% end -%>
+
+                                <%= yield %>
+
+                              </td>
+                            </tr>
+                          </table>
+
+                        </div>
+                        <b class="r1"></b><b class="r1"></b><b class="r3"></b>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+              <td width="10" valign="top" class="common_color georgia_font">
+              </td>
+            </tr>
+            <!-- ======== Footer ======== -->
+            <tr>
+              <td valign="bottom" class="common_color">
+              </td>
+              <td align="center" valign="bottom" style="padding-bottom:10px;" class="common_color">
+                <br/>
+                <table width="100%" cellsacing="2" height="20px">
+                  <tr>
+                    <td align="center">&copy; <%=  Time.now.strftime("%Y") %>. <%= t("layout.copyright") %></td>
+                  </tr>
+                </table>
+              </td>
+              <td class="common_color"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+
+  </body>
+</html>

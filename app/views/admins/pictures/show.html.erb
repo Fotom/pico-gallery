@@ -1,0 +1,10 @@
+<p><%= t("picture_view.subject") %>:</p>
+<p><%= @picture.subject %></p>
+
+<% if @picture.photo.exists? %>
+  <p><%= t("picture_view.preview") %>:</p>
+  <%= image_tag @picture.photo.url(:thumb) %>
+  <br/>
+  <p><%= t("picture_view.orig") %>:</p>
+  <%= image_tag @picture.photo.url() %>
+<% end %>

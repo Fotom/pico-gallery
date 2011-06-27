@@ -1,0 +1,28 @@
+<% if !@parts.blank? %>
+
+  <table class="list">
+    <tr>
+      <th><%= t("part_view.time") %></th>
+      <th></th>
+      <th align=left width=%30><%= t("part_view.name") %></th>
+      <th></th>
+      <th><%= t("part_view.content") %></th>
+    </tr>
+    <% @parts.each do |part| %>
+      <tr>
+        <td nowrap><%= part.created_at.strftime("%d.%m.%Y &nbsp %H:%M") %></td>
+        <td width=%10> &nbsp; </td>
+        <td align='left' width=%70><%= link_to part.name, :action => 'edit', :id => part[:id] %></td>
+        <td nowrap align='right'>
+          <%= link_to image_tag('/picto/del.gif', {:alt => 'delete part', :title => 'delete part'}), :action => "destroy", :id => part[:id] %>
+        </td>
+        <td align='left'><%= part.content %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>
+
+<p>
+  <%= link_to t("part_view.create"), :action => "new" %>
+</p>

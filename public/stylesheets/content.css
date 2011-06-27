@@ -1,0 +1,442 @@
+/* Common part */
+
+table,tr {
+  border-color:white;
+  border:0;}
+
+table th, td {
+  padding: 7px;
+  font-family: tahoma, "Bitstream Vera Sans", "Lucida Sans", Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  text-decoration: none;
+  border-color:#AEAEAE;}
+
+body {
+  font-family: tahoma, "Bitstream Vera Sans", "Lucida Sans", Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  text-decoration: none;
+  border-color:#AEAEAE;
+  margin: 0;
+  padding: 0;
+ border: none;}
+
+option, select, input, textarea {
+font-family: Verdana;
+font-size: 8pt;
+color: #103C90;
+background-color: #E5E5E5;}
+
+h2 {font-family: Arial; 
+  color: #1E78AF;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 30px;}
+h1,h2,h3 {font-weight: bold;
+   text-align:      left;
+   margin:          1.5em 0 0 0;
+   padding:         0;}
+h4,h5,h6 {font-weight: bold;
+   text-align:      left;
+   margin:          1.25em 0 0 0;
+   padding:         0;}
+h1 { font-size:     175% }
+h2 { font-size:     145% }
+h3 { font-size:     120% }
+h4 { font-size:     105% }
+h5 { font-size:     80%  }
+h6 { font-size:     65%  }
+
+/* Common link */
+a:link    {text-decoration: underline; color: #0066CC; background: transparent;}
+a:visited {text-decoration: underline; color: #0066CC; background: transparent;}
+a:hover   {text-decoration: none; color: red; background: transparent;}
+a:active  {text-decoration: underline;}
+
+code,kbd,pre,samp,tt {font-family: "Courier New", Courier, monospace;
+   font-size:       115%;
+   line-height:     1.0;}
+kbd,code.markup,span.markup,.title {font-weight: bolder;}
+abbr,acronym {font: inherit;}
+abbr[title],acronym[title]{cursor: help; border-bottom: 1px dotted #CCCCCC;}
+cite,dfn,var,.fn,.url,.email {font-style: italic;}
+
+button, input.button {
+  background-color: transparent;
+  border: 0px;
+  text-align: left;
+  text-decoration : underline;
+  color : #1E78AF;
+  cursor: pointer;
+  cursor: hand;}
+
+/* Common img part */
+img {vertical-align:  baseline;
+   margin:          0;
+   padding:         0;
+   border:          none;}
+img.left {margin:  0.75em 1.5em 0.75em 0; float: left;}
+img.right {margin: 0.75em 0 0.75em 1.5em; float: right;}
+del,del * {text-decoration: line-through;}
+ins,ins * {text-decoration: underline;}
+
+/* Block elements */
+p {margin: 1em 0; padding: 0;}
+blockquote {margin: 1em 2.5em; padding: 0;}
+pre {line-height:     1.2;
+   margin:          1em 2.5em;
+   padding:         0;}
+pre code,pre kbd,pre samp,pre tt {font-size: 100%; line-height: 1.2;}
+hr {color:           #999999;
+   background:      transparent;
+   height:          1px;	/* Required for IE/Win */
+   margin:          1em 0;
+   padding:         0;
+   border-color:    #999999;
+   border-width:    1px;
+   border-style:    none none solid none;}
+
+/* Lists */
+ol {list-style:      decimal outside;
+   margin:          1em 0;
+   padding:         0 0 0 2.5em;}
+ul {list-style:     square outside;
+   margin:          1em 0;
+   padding:         0 0 0 2.5em;}
+ol ol,ol ul,ul ol,ul ul {margin-top: 0; margin-bottom: 0;}
+ol ul,ol ol ul,ol ul ul,ul ul,ul ol ul,ul ul ul {list-style: square outside;}
+dl {margin: 1em 0; padding: 0;}
+dt {font:          inherit;
+   margin:          1em 0 0.25em 0;
+   padding:         0;}
+dd {margin: 0 0 1em 2.5em; padding: 0;}
+
+/* For date, tables, links  */
+.project_name,.project_attributes{
+   font-weight: bold;
+   text-align:  left;
+   margin:      1.25em 0 0 0;
+   padding:     0;
+   font-size:   105%;}
+.project_attributes{padding-left: 830px;}
+
+.data th {margin: 1px; padding: 5px; background-color: #DCDCDC;}
+.data, .sortable tr {text-align: center;}
+.data tr.even th { background-color: #E6ECEF; padding: 5px; padding-right: 5px;}
+.data tr.odd td { background-color: #F2F6F7; padding-left: 5px; padding-right: 5px;}
+.data tr.even td { background-color: #E6ECEF; padding: 5px; padding-right: 5px;}
+
+.project td { background-color: #ffffcc; padding: 5px; padding-right: 5px; color: black;}
+.add_url td { background-color: #d9e7fb; padding: 5px; padding-right: 5px; color: black;}
+
+.selected {color: gray; font-weight: bold;}
+.left_head { width: 100px; color: gray;}
+.ok {color: green; font-weight: bold;}
+a:link.ok_simple       {color: green;}
+a:visited.ok_simple    {color: green;}
+a:link.alert_simple    {color: red;}
+a:visited.alert_simple {color: red;}
+a.simple       {}
+.ok_simple     {color: green;}
+.alert_simple  {color: red;}
+.simple        {}
+.filter_param_edit { width:40px; text-align:center; color:green; border:solid silver 1px; background-color:white; }
+
+.data tr.even td.quick_title { width: 270px; text-align: left; background-color: #E6ECEF; padding: 5px; padding-right: 5px;}
+.data tr.even td.quick_center { text-align: left; background-color: #E6ECEF; padding: 5px; padding-right: 5px;}
+.data tr.even td.quick_empty { width: 100px; text-align: left; background-color: #E6ECEF; padding: 5px; padding-right: 5px;}
+.data tr.even td.selected     { width: 50%; text-align: center; padding: 5px; padding-right: 5px; font-weight: normal;}
+.data tr.even td.not_selected { width: 50%; background-color: rgb(242, 246, 247); text-align: center; padding: 5px; padding-right: 5px; font-weight: normal;}
+
+.data tr.odd td.tree_left { width: 40px; text-align: left; padding-left: 5px; padding-right: 5px;}
+.data tr.odd td.tree_title { font-size: 12px; font-weight: bold; text-align: left; padding-left: 5px; padding-right: 5px;}
+.data tr.odd td.tree_right { width: 80px; text-align: left; padding-left: 5px; padding-right: 5px;}
+.data tr.odd td.tree_cleft { width: 400px; text-align: left; padding-left: 5px; padding-right: 5px;}
+.data tr.odd td.tree_cright { text-align: left; padding-left: 5px; padding-right: 5px;}
+
+#center_text {color: #4682B4;}
+#title_down {margin-top: 1ex; font-size: 12px; font-weight: bold; color: #4682B4; padding-left: 40px;}
+#domain_style {font-size: 14px; font-weight: bold; color: #4682B4;}
+#domain_style_exists {font-size: 14px; font-weight: bold; color: green; cursor: help;}
+#domain_style_compact {font-size: 12px; font-weight: bold; color: #4682B4;}
+#domain_style_exists_compact {font-size: 12px; font-weight: bold; color: green; cursor: help;}
+
+#top_web_opt_panel {
+    border: 2px solid white; 
+    margin: 2px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+    width: 697px; 
+    background-color: white; 
+    text-align: justify;}
+#main_content {
+    border: 2px solid white;
+    margin: 2px;
+    padding: 20px;
+    width: 730px;
+    min-height: 700px; 
+    background-color: #fff;
+    text-align: justify;}
+#main_title{
+    margin-top: 1ex; 
+    font-size: 17px; 
+    font-weight: bold; 
+    color: #fff; 
+    padding-left: 20px;}
+#head_attention{
+    padding: 10px;
+    font-family: Arial, "Bitstream Vera Sans", "Lucida Sans", Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    font-weight: bold;
+    }
+#code_highlight{
+    padding: 10px;
+    background-color: #eee;
+    font-family: Arial, "Bitstream Vera Sans", "Lucida Sans", Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    }
+#main_notice{font-size: 12px; font-weight: bold; color: green}
+#main_error{font-size: 12px; font-weight: bold; color: red}
+#main_sub_header{margin-top: 1ex; font-size: 12px; font-weight: normal; color: #4682B4;}
+#main_title_down{margin-top: 1ex; font-size: 12px; font-weight: bold; color: #4682B4; padding-left: 40px;}
+    
+/********** Styles for Footer **********/
+#footer {
+   font-size:       90%;
+   text-align:      center;
+   color:           white;
+   background:      #6495ED;
+   margin:          0;
+   top: bottom;
+   padding:         0.5em 0.5em 0.5em 0.5em;
+   clear:           both;
+}
+
+#footer a:link,#footer a:visited {
+   text-decoration: underline;
+   color:           white;
+   background:      transparent;}
+#footer hr {display: none !important;}
+
+td.menu_on a {color: #1E78AF;}
+td.menu_off a {color: #000000;}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #e5e5e5;
+  text-align: center;
+}
+
+/* TABS */
+
+#tab {
+  height: 27px;
+  margin: 0;
+  padding: 0 20px 0 30px;
+}
+
+#tab ul {
+  margin: 0; padding: 0;
+}
+
+#tab li {
+  margin: 0; padding: 0;
+  display: inline;
+  list-style: none;
+  border: none;
+}
+
+#tab ul a:link.current, #tab ul a:visited.current {
+  background: #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  color: #090;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 0;
+}
+
+#tab a:link,
+#tab a:visited {
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 4px 8px 6px 8px;
+  margin: 0;
+  border: 1px solid #6495ED;
+  color: #fff;
+  background-color: #FF8C00;
+  border-bottom: 1px solid #1A4F85;
+  text-decoration: none;
+}
+
+#tab a:hover {
+  color: #fff;
+  background: #FFA500;
+  border-bottom: 1px solid #1D64AD;
+}
+
+/* SUB TABS */
+
+#sub_tab {
+  height: 20px;
+  margin: 0;
+  padding: 0 20px 0 30px;
+}
+
+#sub_tab ul {
+  margin: 0; padding: 0;
+}
+
+#sub_tab li {
+  margin: 0; padding: 0;
+  display: inline;
+  list-style: none;
+  border: none;
+}
+
+#sub_tab ul a:link.current, #sub_tab ul a:visited.current {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  color: #090;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 0;
+}
+
+#sub_tab a:link,
+#sub_tab a:visited {
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 0px 8px 0px 8px;
+  margin: 0;
+  border: 1px solid #6495ED;
+  color: #fff;
+  background-color: #1A4F85;
+  border-bottom: 1px solid #1A4F85;
+  text-decoration: none;
+}
+
+#sub_tab a:hover {
+  color: #fff;
+  background: #1D64AD;
+  border-bottom: 1px solid #1D64AD;
+}
+
+/* HEAD */
+
+div#head {
+  background: #6495ED;
+  padding: 13px 0 0 0;
+  text-align: left;
+  border-bottom: 12px solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 12px;
+  z-index: 2;
+}
+
+div#sub_head_users {
+  background: #81A9E6;
+  padding: 12px 0 0 0;
+  text-align: left;
+  border-bottom: 12px solid #fff;
+  position: relative; 
+  top: 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0px;
+}
+
+div#sub_head {
+  background: #6495ED;
+  padding: 12px 0 0 0;
+  text-align: left;
+  border-bottom: 12px solid #fff;
+  position: relative; 
+  top: 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0px;
+}
+
+div#wrap {
+  padding: 0 23px 10px 30px;
+  margin: 0 auto;
+  padding-top: 38px;
+  position: relative;
+  min-height: 100%;
+  margin: 13px auto 0 auto;
+  text-align: center;
+}
+
+/* For admin part */
+
+#admin_content {
+    border: 2px solid white; 
+    margin: 2px; 
+    padding: 20px; 
+    width: 96%; 
+    background-color: #fff; 
+    text-align: justify;}
+
+
+/* For date and sortable table */
+
+table.sortable td a.alert, table.data td a.alert, .alert {
+    color: red;
+    font-weight: bold;}
+	
+table.sortable thead {
+    cursor: pointer; 
+    cursor: hand;}
+	
+table.sortable thead th.sorttable_nosort {
+    cursor: default;}
+		    
+table.sortable td, table.sortable th, table.data td, table.data th {
+    margin: 1px;
+    padding: 3px;
+    color: #1E78AF;}
+					
+table.sortable a, table.data a {
+    color: #1E78AF;
+}
+					    
+table.sortable th, table.data th {
+    background-color: #EEEEEE;
+    text-align: center;}
+				    
+table.sortable tr.odd td, table.data tr.odd td {
+    background-color: #F2F6F7;}
+							
+table.sortable tr.even td, table.data tr.even td {
+    background-color: #E6ECEF;}
+
+/* extended content for lady only  */
+.tags {
+    padding: .2em 0 .1em 18px;
+    clear:both;
+    list-style: none;
+    background: #fff url(/picto/icon-tags.gif) no-repeat 0 50%;
+}
+.tags li {
+    display: inline;
+}
+.tags li a {
+    font-size: .83em;
+}
+.tags li a{
+    color: #666;
+}
+.tags li a:hover {
+    color:#A3A3A3;
+}
+
+.imgBlock {float:left; background-color:#F1F1F1; margin-right:10px;}
+
+

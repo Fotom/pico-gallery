@@ -1,0 +1,373 @@
+"ru-RU":
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B %Y"
+
+    day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
+    standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
+    abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
+
+    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    # see russian gem for info on "standalone" day names
+    standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+    abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
+    standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
+
+    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+      time: "%H:%M"
+      only_second: "%S"
+
+    am: "утра"
+    pm: "вечера"
+
+  number:
+    format:
+      separator: "."
+      delimiter: " "
+      precision: 3
+
+    currency:
+      format:
+        format: "%n %u"
+        unit: "руб."
+        separator: "."
+        delimiter: " "
+        precision: 2
+
+    percentage:
+      format:
+        delimiter: ""
+
+    precision:
+      format:
+        delimiter: ""
+
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      # Rails 2.2
+      # storage_units: [байт, КБ, МБ, ГБ, ТБ]
+
+      # Rails 2.3
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "байт"
+            few:   "байта"
+            many:  "байт"
+            other: "байта"
+          kb: "КБ"
+          mb: "МБ"
+          gb: "ГБ"
+          tb: "ТБ"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "меньше минуты"
+      less_than_x_seconds:
+        one:   "меньше {{count}} секунды"
+        few:   "меньше {{count}} секунд"
+        many:  "меньше {{count}} секунд"
+        other: "меньше {{count}} секунды"
+      x_seconds:
+        one:   "{{count}} секунда"
+        few:   "{{count}} секунды"
+        many:  "{{count}} секунд"
+        other: "{{count}} секунды"
+      less_than_x_minutes:
+        one:   "меньше {{count}} минуты"
+        few:   "меньше {{count}} минут"
+        many:  "меньше {{count}} минут"
+        other: "меньше {{count}} минуты"
+      x_minutes:
+        one:   "{{count}} минуту"
+        few:   "{{count}} минуты"
+        many:  "{{count}} минут"
+        other: "{{count}} минуты"
+      about_x_hours:
+        one:   "около {{count}} часа"
+        few:   "около {{count}} часов"
+        many:  "около {{count}} часов"
+        other: "около {{count}} часа"
+      x_days:
+        one:   "{{count}} день"
+        few:   "{{count}} дня"
+        many:  "{{count}} дней"
+        other: "{{count}} дня"
+      about_x_months:
+        one:   "около {{count}} месяца"
+        few:   "около {{count}} месяцев"
+        many:  "около {{count}} месяцев"
+        other: "около {{count}} месяца"
+      x_months:
+        one:   "{{count}} месяц"
+        few:   "{{count}} месяца"
+        many:  "{{count}} месяцев"
+        other: "{{count}} месяца"
+      about_x_years:
+        one:   "около {{count}} года"
+        few:   "около {{count}} лет"
+        many:  "около {{count}} лет"
+        other: "около {{count}} лет"
+      over_x_years:
+        one:   "больше {{count}} года"
+        few:   "больше {{count}} лет"
+        many:  "больше {{count}} лет"
+        other: "больше {{count}} лет"
+    prompts:
+      year: "Год"
+      month: "Месяц"
+      day: "День"
+      hour: "Часов"
+      minute: "Минут"
+      second: "Секунд"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "{{model}}: сохранение не удалось из-за {{count}} ошибки"
+          few:   "{{model}}: сохранение не удалось из-за {{count}} ошибок"
+          many:  "{{model}}: сохранение не удалось из-за {{count}} ошибок"
+          other: "{{model}}: сохранение не удалось из-за {{count}} ошибки"
+        body: "Проблемы возникли со следующими полями:"
+
+      messages:
+        inclusion: "имеет непредусмотренное значение"
+        exclusion: "имеет зарезервированное значение"
+        invalid: "имеет неверное значение"
+        confirmation: "не совпадает с подтверждением"
+        accepted: "нужно подтвердить"
+        empty: "не может быть пустым"
+        blank: "не может быть пустым"
+        too_long:
+          one:   "слишком большой длины (не может быть больше чем {{count}} символ)"
+          few:   "слишком большой длины (не может быть больше чем {{count}} символа)"
+          many:  "слишком большой длины (не может быть больше чем {{count}} символов)"
+          other: "слишком большой длины (не может быть больше чем {{count}} символа)"
+        too_short:
+          one:   "недостаточной длины (не может быть меньше {{count}} символа)"
+          few:   "недостаточной длины (не может быть меньше {{count}} символов)"
+          many:  "недостаточной длины (не может быть меньше {{count}} символов)"
+          other: "недостаточной длины (не может быть меньше {{count}} символа)"
+        wrong_length:
+          one:   "неверной длины (может быть длиной ровно {{count}} символ)"
+          few:   "неверной длины (может быть длиной ровно {{count}} символа)"
+          many:  "неверной длины (может быть длиной ровно {{count}} символов)"
+          other: "неверной длины (может быть длиной ровно {{count}} символа)"
+        taken: "уже существует"
+        not_a_number: "не является числом"
+        greater_than: "может иметь значение большее {{count}}"
+        greater_than_or_equal_to: "может иметь значение большее или равное {{count}}"
+        equal_to: "может иметь лишь значение, равное {{count}}"
+        less_than: "может иметь значение меньшее чем {{count}}"
+        less_than_or_equal_to: "может иметь значение меньшее или равное {{count}}"
+        odd: "может иметь лишь четное значение"
+        even: "может иметь лишь нечетное значение"
+
+      models:
+        user:
+          attributes:
+            login:
+              blank: не может быть пустым
+              too_short: слишком короткий
+              taken: уже занят
+            email:
+              too_short: слишком короткий
+              taken: уже занят
+            password:
+              confirmation: пароль не совпадает
+              too_short: слишком короткий
+            password_confirmation:
+              too_short: слишком короткий
+
+  wysihat_files:
+    destroy:
+      name: удалить
+      sure: вы уверены, что хотите удалить файл
+
+  authlogic:
+    error_messages:
+      login_blank: не может быть пустым
+      login_not_found: некорректный
+      login_invalid: можно использовать только буквы, числа, пробелы и .-_@.
+      consecutive_failed_logins_limit_exceeded: Исчерпан допустимый лимит попыток логина, аккаунт заблокирован.
+      email_invalid: некорректный email адрес.
+      password_blank: не может быть пустым
+      password_invalid: некорректный
+      not_active: ваш аккаунт неактивный
+      not_confirmed: Ваша учетная запись не подтверждена
+      not_approved: Ваша учетная запись не одобрена
+      no_authentication_details: Вы не указали необходимые данные для входа
+    models:
+      user_session: UserSession (or whatever name you are using)
+    attributes:
+      user_session:
+        login: логин
+        email: email
+        password: пароль
+        remember_me: запомнить меня
+
+  # есть подозрение, что это нигде не используется, в будущем можно удалить и проверить гипотезу
+  active_record:
+    error:
+      header_message: ["Couldn't save this {{object_name}}: 1 error", "Couldn't save this {{object_name}}: {{count}} errors."]
+      message: "Please check the following fields:"
+    error_messages:
+      inclusion: "is not included in the list"
+      exclusion: "is not available"
+      invalid: "is not valid"
+      confirmation: "does not match its confirmation"
+      accepted: "must be accepted"
+      empty: "must be given"
+      blank: "must be given"
+      too_long: "is too long (no more than {{count}} characters)"
+      too_short: "is too short (no less than {{count}} characters)"
+      wrong_length: "is not the right length (must be {{count}} characters)"
+      taken: "is not available"
+      not_a_number: "is not a number"
+      greater_than: "must be greater than {{count}}"
+      greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+      equal_to: "must be equal to {{count}}"
+      less_than: "must be less than {{count}}"
+      less_than_or_equal_to: "must be less than or equal to {{count}}"
+      odd: "must be odd"
+      even: "must be even"
+
+  # for picolove only
+  header_info:
+    new_picture: "Вы можете добавить новую картинку о любви, которая вам понравилась и она появится в указанном разделе, если будет одобрена администрацией"
+    index_welcome: "Этот сайт содержит исключительно картинки про любовь, которые поднимут вам настроение и предоставят великолепный повод по-настоящему задуматься над тем что же такое любовь и какая она бывает. На сайте содержится большое количество картинок о любви, которые постоянно добавляются. Существует достаточно большое количество разнообразных разделов с картинками-сердечками, анимированными картинками про любовь, фото и рисунками влюбленных пар, проявлениями любви среди братьев наших меньших, разнообразными надписями, открытками и ангелами.
+           <br/><br/>
+         Любите своих близких, дарите тепло, нежность и красоту всем вокруг.
+           <br/><br/>
+         Здесь вам всегда рады!
+         <div style=\"float: right; margin-top: -7px;\" class=\"yashare-auto-init\" data-yashareL10n=\"ru\" data-yashareType=\"button\" data-yashareQuickServices=\"yaru,vkontakte,facebook,twitter,odnoklassniki,moimir\"></div>
+         "
+
+  notice:
+    sended_to_premoderation: "Картинка успешно отправлена на премодерацию"
+    part_created: "Раздел успешно добавлен"
+    part_edited: "Раздел изменен"
+    part_deleted: "Раздел был успешно удален"
+    picture_created: "Картинка успешно добавлена"
+    picture_edited: "Картинка изменена"
+    picture_deleted: "Картинка успешно удалена"
+    picture_approved: "Картинка успешно одобрена"
+
+  error:
+    part_deleted: "Невозможно удалить раздел"
+    picture_deleted: "Не удалось удалить картинку"
+    picture_approved: "Не удалось одобрить картинку"
+
+  errors_on_create: "Возникли следующие ошибки"
+
+  picture_model:
+    error:
+      photo_file_name: "Не указана картинка"
+      part_id: "Не указан раздел"
+    types:
+      picture: "Картинка"
+      avatar: "Аватар"
+      flash: "Флешка"
+
+  part_model:
+    error:
+      name: "Укажите название раздела"
+
+  part_view:
+    name: "Название"
+    order_number: "Порядковый номер"
+    content: "Содержание"
+    time: "Время"
+    create: "Добавить раздел"
+
+  picture_view:
+    subject: "Заголовок"
+    picture: "Картинка"
+    part: "Раздел"
+    type: "Тип"
+    time: "Время"
+    name: "Название"
+    add: "Добавить картинку"
+    preview: "Превью"
+    orig: "Оригинал"
+
+  form:
+    save: "Сохранить"
+    create: "Создать"
+    login: "Войти"
+    send_to_premoderate: "Отправить на премодерацию"
+
+  layout_admin:
+    title: "Админка"
+    parts: "Разделы"
+    pictures: "Картинки"
+    user_pictures: "Картинки пользователей"
+
+  layout:
+    title: "Картинки о любви"
+    all: "Все"
+    new: "Новые"
+    add_pictures: "Добавить картинок"
+    copyright: "Пожелания, замечания и баги высылайте на email.for.oleg@gmail.com"
+
+  not_here_content: "Смотрите красивые картинки, наслаждайтесь солнечным светом, распахните все двери навстречу любви!"
+  not_here_title: "Самые лучшие картинки о любви"
+  default_content: "Здесь вы найдете самую лучшую подборку картинок о прекрасном чувстве - любовь"
+
+  seo_pages:
+    pictures:
+      index:
+        # pseudo part_id
+        first:
+          page_2: "Смотрите самую лучшую подборку картинок о любви. Мы стараемся подобрать для вас только самые потрясающие картинки и фото про любовь."
+          page_3: "Красивые, яркие, незабываемые картинки про любовь от сайта picolove.ru. Любовь это прекрасно, ведь это по-настоящему самое яркое, сильное и всепоглощающее чувство. Просмотр картинок о любви может вдохновить вас на смелые поступки или признания, которые сделают окружающий мир прекрасней."
+          page_4: "На нашем сайте вы можете свободно скачать любую понравившуюся вам картинку, совершенно бесплатно. Или добавить ссылку на нее на любой из интересующих вас сайтов."
+          title_1: "Картинки про любовь"
+          title_2: "Фото про любовь"
+          title_3: "Картинки про любовь красивые"
+          title_4: "Картинки про любви скачать, картинки о любви бесплатно"
+      list:
+        # part_id
+        "1":
+          page_2: "Здесь вы можете посмотреть картинки с изображением сердечек и способы проявления любви с их помощью."
+          title_1: "Сердечки картинки"
+          title_2: "Красивые картинки с изображением сердечек, любовь картинки"
+        "2":
+          page_2: "На сайте о любви и всех возможных ее проявлениях вы можете свободно скачивать анимационные картинки про любовь. Если у вас есть опыт создания анимации, то вы можете создавать подобные картинки сами, с использованием специальных графических редакторов и сохранять их в gif формате."
+          page_3: "Гостевые книги могут быть важной частью вашего общения, поэтому именно в этом разделе вы можете найти красивые картинки для них."
+          title_1: "Анимационные картинки про любовь"
+          title_2: "Красивые анимации, скачать анимации бесплатно"
+          title_3: "Анимационные картинки для гостевых книг, Красивые анимированные картинки"
+        "3":
+          title_1: "Он и она картинки"
+          title_2: "Он и она картинки, влюбленные пары, он и она любовь"
+        "4":
+          title_1: "Животные и любовь, картинки про любовь среди животных"
+        "5":
+          title_1: "Поцелуи картинки"
+          title_2: "Картинки с поцелуями, картинки губы"
+        "6":
+          title_1: "Картинки с ангелами, любовь и ангелы"
+        "7":
+          title_1: "Картинки о любви с надписями"
+        "8":
+          title_1: "Открытки про любовь"
+          title_2: "Любовные картинки, картинки для девушек, картинки про любовь бесплатно"
+
+  will_paginate:
+    back: "&laquo; сюда"
+    next: "туда &raquo;"

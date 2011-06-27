@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title><%= t("layout_admin.title") %></title>
+    <%= stylesheet_link_tag('scaffold') %>
+    <%= stylesheet_link_tag('content') %>
+    <%= stylesheet_link_tag 'calendar-win2k-cold-1' %>
+    <%= stylesheet_link_tag 'calendar' %>
+    <%= stylesheet_link_tag 'messages' %>
+
+  <!--[if lte IE 6]> <style type="text/css"> @import url("<%= stylesheet_path 'IE.css'  %>"); </style> <![endif]-->
+  <!--[if     IE 7]> <style type="text/css"> @import url("<%= stylesheet_path 'IE7.css' %>"); </style> <![endif]-->
+
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'calendar' %>
+    <%= javascript_include_tag 'calendar-en' %>
+    <%= javascript_include_tag 'calendar-setup' %>
+    <%= javascript_include_tag 'jsloader' %>
+
+  </head>
+
+  <body>
+
+    <div id="head">
+      <div id="tab">
+        <ul>
+
+          <li><%= link_to(t("layout_admin.parts"), :controller => 'admins/parts', :action => 'index') %></li>
+          <li><%= link_to(t("layout_admin.pictures"), :controller => 'admins/pictures', :action => 'index') %></li>
+          <li><%= link_to(t("layout_admin.user_pictures"), :controller => 'admins/pictures', :action => 'list_users') %></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======== Main Content ======== -->
+    <div id="wrap">
+      <div id="admin_content">
+        <table  cellpadding="5" width="100%" height=700px>
+          <tr>
+            <td valign="top">
+              <div id="main_notice"><%= flash[:notice] %></div>
+              <div id="main_error"><%= flash[:error] %></div>
+              <%= yield %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

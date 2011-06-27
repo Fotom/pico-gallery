@@ -1,0 +1,9 @@
+<% if !@pictures.blank? %>
+
+  <%= will_paginate @pictures %>
+
+  <%= render :partial => 'list' %>
+
+  <%= will_paginate @pictures %>
+
+<% end %>

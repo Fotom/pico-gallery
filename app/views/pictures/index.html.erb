@@ -1,0 +1,36 @@
+<% page_title %>
+
+<% if !@pictures.blank? %>
+  <%= will_paginate @pictures, :previous_label => t("will_paginate.back"), :next_label => t("will_paginate.next") %>
+
+  <!--Social button-->
+  <% if params[:locale] == 'ru-RU' %>
+    <div style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;">
+      <a target="_blank" class="mrc__plugin_like_button" href="http://connect.mail.ru/share" data-mrc-config="{'type' : 'button', 'width' : '150'}">Нравится</a>
+      <script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
+    </div>
+  <% end %>
+
+  <br/>
+  <table>
+    <tr>
+      <td>
+        <% for picture in @pictures %>
+          <span>
+            <% if picture.photo.exists? %>
+              <div class="ngg-gallery-thumbnail-box" style="height: 170px;">
+                <div class="ngg-gallery-thumbnail">
+                  <a href="<%= picture.photo.url() %>" rel="facebox" class="thickbox">
+                    <%= image_tag picture.photo.url(:thumb) %>
+                  </a>
+                </div>
+              </div>
+            <% end %>
+          </span>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  <br/><br/>
+  <%= will_paginate @pictures, :previous_label => t("will_paginate.back"), :next_label => t("will_paginate.next") %>
+<% end %>

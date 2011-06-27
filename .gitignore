@@ -1,0 +1,31 @@
+# public
+tags
+public/system/*
+log/*
+tmp/*
+db/cstore/**
+db/sphinx/**
+config/application_config.yml
+vendor/bundle_gems
+config/database.yml
+config/*.sphinx.conf
+db/schema.rb
+db/development_structure.sql
+.bundle
+*.sqlite3
+*.cache
+*.tmproj
+
+# generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# my local files
+_back_up/
+public/images/pictures/photos/
+tasks_picolove
+*.svg
+_addons

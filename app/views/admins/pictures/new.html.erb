@@ -1,0 +1,6 @@
+<% form_for :picture, :url => { :action => "create" }, :html => {:multipart => true} do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= f.submit t("form.save") %>
+<% end %>
+
+<br/>

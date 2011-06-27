@@ -1,0 +1,249 @@
+en:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%e %b"
+      long: "%B %e, %Y"
+      only_day: "%e"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order: [ :year, :month, :day ]
+
+  time:
+    formats:
+      default: "%a %b %d %H:%M:%S %z %Y"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      only_second: "%S"
+
+    datetime:
+      formats:
+        default: "%Y-%m-%dT%H:%M:%S%:z"
+
+    am: 'am'
+    pm: 'pm'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'half a minute'
+      less_than_x_seconds:
+        zero: 'less than 1 second'
+        one: '1 second'
+        other: '{{count}} seconds'
+      x_seconds:
+        one: '1 second'
+        other: '{{count}} seconds'
+      less_than_x_minutes:
+        zero: 'less than a minute'
+        one: '1 minute'
+        other: '{{count}} minutes'
+      x_minutes:
+        one: '1 minute'
+        other: '{{count}} minutes'
+      about_x_hours:
+        one: 'about 1 hour'
+        other: '{{count}} hours'
+      x_days:
+        one: '1 day'
+        other: '{{count}} days'
+      about_x_months:
+        one: 'about 1 month'
+        other: '{{count}} months'
+      x_months:
+        one: '1 month'
+        other: '{{count}} months'
+      about_x_years:
+        one: 'about 1 year'
+        other: '{{count}} years'
+      over_x_years:
+        one: 'over 1 year'
+        other: '{{count}} years'
+
+  number:
+    format:
+      precision: 3
+      separator: '.'
+      delimiter: ','
+    currency:
+      format:
+        unit: '$'
+        precision: 2
+        format: '%u %n'
+        separator: "."
+        delimiter: ","
+        unit_format: "{{sign}}{{summ}}"
+
+  active_record:
+    error:
+      header_message: ["Couldn't save this {{object_name}}: 1 error", "Couldn't save this {{object_name}}: {{count}} errors."]
+      message: "Please check the following fields:"
+    error_messages:
+      inclusion: "is not included in the list"
+      exclusion: "is not available"
+      invalid: "is not valid"
+      confirmation: "does not match its confirmation"
+      accepted: "must be accepted"
+      empty: "must be given"
+      blank: "must be given"
+      too_long: "is too long (no more than {{count}} characters)"
+      too_short: "is too short (no less than {{count}} characters)"
+      wrong_length: "is not the right length (must be {{count}} characters)"
+      taken: "is not available"
+      not_a_number: "is not a number"
+      greater_than: "must be greater than {{count}}"
+      greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+      equal_to: "must be equal to {{count}}"
+      less_than: "must be less than {{count}}"
+      less_than_or_equal_to: "must be less than or equal to {{count}}"
+      odd: "must be odd"
+      even: "must be even"
+
+  # for picolove only
+  header_info:
+    new_picture: "You can add a new picture of the love that you like and it will appear in this section, if it is approved by the administration"
+    index_welcome: "This site contains only images of love that will lift your spirits and provide a great excuse to really think about what is love and what it is. The site contains lots of pictures of love, which are constantly being added. There is a fairly wide variety of topics with images, hearts, animated images of love, pictures and drawings of couples in love, love, poverty among our younger brothers, a variety of labels, cards and angels.
+            <br/> <br/>
+          Love your family, give warmth, tenderness and beauty all around.
+            <br/> <br/>
+          Here you are always welcome!"
+
+  notice:
+    sended_to_premoderation: "Picture successfully sent to the moderated"
+    part_created: "Section successfully added"
+    part_edited: "section, change"
+    part_deleted: "Section was successfully deleted"
+    picture_created: "Image was successfully added"
+    picture_edited: "The picture changed"
+    picture_deleted: "The picture has been successfully removed"
+    picture_approved: "Picture successfully approved"
+
+  error:
+    part_deleted: "Unable to delete a section"
+    picture_deleted: "Failed to delete the picture"
+    picture_approved: "Failed to approve the picture"
+
+  errors_on_create: "Following error"
+
+  picture_model:
+    error:
+      photo_file_name: "Not specified picture"
+      part_id: "Not defined section"
+    types:
+      picture: "Picture"
+      avatar: "Avatar"
+      flash: "Flash"
+
+  part_model:
+    error:
+      name: "Enter the name of the section"
+
+  part_view:
+    name: "Name"
+    order_number: "Order number"
+    content: "Content"
+    time: "Time"
+    create: "Create section"
+
+  picture_view:
+    subject: "Subject"
+    picture: "Picture"
+    part: "Section"
+    type: "Type"
+    time: "Time"
+    name: "Name"
+    add: "Create picture"
+    preview: "Preview"
+    orig: "Large picture"
+
+  form:
+    save: "Save"
+    create: "Create"
+    login: "Login"
+    send_to_premoderate: "Send to premoderation"
+
+  layout_admin:
+    title: "Admins"
+    parts: "Sections"
+    pictures: "Pictures"
+    user_pictures: "User pictures"
+
+  layout:
+    title: "Pictures about love"
+    all: "All"
+    new: "New"
+    add_pictures: "Add pictures"
+    copyright: "Remarks and bugs to send email.for.oleg@gmail.com"
+
+  not_here_content: "See the beautiful pictures and enjoy the sunshine, raspahnite all doors to love!"
+  not_here_title: "The best pictures of love"
+  default_content: "Here you will find the best selection of pictures of a beautiful feeling - love"
+   
+  seo_pages:
+    pictures:
+      index:
+        # pseudo part_id
+        first:
+          page_2: "See the best collection of images of love. We try to pick you up for only the most stunning pictures and photos about love."
+          page_3: "Beautiful, vivid, unforgettable images of love on the site picolove.ru. Love is wonderful, because it is truly the brightest, most powerful and overwhelming feeling. View images of love can inspire you to brave deeds, or recognition that will make the surrounding world more beautiful. "
+          page_4: "On our site you can freely download any picture you liked, for free. Or add a link to it on any of the sites that interest you."
+          title_1: "Pictures of love"
+          title_2: "Picture of love"
+          title_3: "Pictures of love beautiful"
+          title_4: "Pictures about love download, free pictures of love"
+      list:
+        # part_id
+        "1":
+          page_2: "Here you can see pictures of hearts and the ways of love with them."
+          title_1: "Hearts Pictures"
+          title_2: "Beautiful pictures of hearts, love pictures"
+        "2":
+          page_2: "The site of love and all its possible manifestations, you can download free animated gifs of love. If you have experience in creating animation, you can create these images yourself, using a special graphics program and save them in gif format."
+          page_3: "Guest books can be an important part of your communication, so in this section you can find nice pictures for them."
+          title_1: "Animated pictures of love"
+          title_2: "Beautiful animation, animation, free download"
+          title_3: "Animated pictures for the guest book, Beautiful animated pictures"
+        "3":
+          title_1: "He and she pictures"
+          title_2: "He and she pictures, loving couples, he and she love"
+        "4":
+          title_1: "Animals and the love of love pictures of animals"
+        "5":
+          title_1: "Kissing Pictures"
+          title_2: "Pictures of kissing lips Pictures"
+        "6":
+          title_1: "Pictures from the angels, love and angels"
+        "7":
+          title_1: "Pictures of love with the words"
+        "8":
+          title_1: "Postcards of love"
+          title_2: "Love Pictures, Pictures of girls, pictures of love for free"
+
+  part_names:
+    "1": "Hearts"
+    "2": "Animated"
+    "3": "Love piople"
+    "4": "Animals"
+    "5": "Kisses"
+    "6": "Angels"
+    "7": "Prints"
+    "8": "Cards"
+
+  part_contents:
+    "1": "This section contains images that depict hearts, because the heart, but rather a loving heart - is one of the most sensitive places of love. When spring comes, flowers bloom, have fun playing the sun's rays and we look at the nearest man, our heart begins to beat faster, it is natural, emotional level gives us a first signal and the council. Listen to your heart - it is one of the best of our advisers."
+    "2": "Animated pictures is always fun and beautiful. With their help, you can clearly express their love and mutual feelings. Shining, shimmering, sparkling myriad of lights - that's what attracts attention and draws attention to itself. If you want to be among the most brilliant and extraordinary people, then maybe you should just use animated pictures."
+    "3": "Courting couples, which could be better? People openly show love for each other. The mutual feeling is the best that can be of all possible options, because when it occurs are both happy and He and She!"
+    "4": "Love is the feeling is not unique to humans, in animals it is also fairly common, and look at pictures of her expression is very nice. Love of animals may appear to one another among the animals of one species, or sometimes even between different species, like dog or cat to the contrary. Just have a special charm to her mother's picture cub, when you can see the tenderness and the desire to protect the one hand and complete trust in the other."
+    "5": "Sensual, soft, pink, moist and tender - it's all the words most accurately describe our lips, we are able to give pleasure to his favorite fairy companion. Kiss - one of the first signs of love for each other. Images reveal a kiss before we start the two secret games people love the continuance of which will be available only two of them."
+    "6": "This section contains various pictures of angels. Angels carry the love and protect it from extraneous influences that help to overcome the difficulties of bringing together and sometimes do not even know about it, two loving hearts."
+    "7": "The most openly express their love allows text that can be placed directly on the image. Combining together the picture and the inscription can be done to better express their feelings to loved ones. In the inscriptions collected just such images, which combine a beautiful loving image and expressive love text."
+    "8": "Here you can find postcards of love theme. This is mainly pictures and drawings that will please the girls."
+    "9": "Love of the drawn world. Bright colors and cute little faces as well as possible can cause tenderness and admiration! For all fans of anime genre - a great collection of images."
+
+  will_paginate:
+    back: "&laquo; back"
+    next: "next &raquo;"
+
