@@ -3,7 +3,8 @@ tags
 public/system/*
 log/**/*
 log
-tmp/*
+tmp/**/*
+tmp
 db/cstore/**
 db/sphinx/**
 config/application_config.yml
