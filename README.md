@@ -23,19 +23,27 @@ This is complite rails application and it can be installed quite simply, like al
 	# Edit config/database.yml, create database for new project
 
 	rake db:migrate
+
+	# replace locale "ru-RU" to "en" or another in files
+	# config/initializers/i18n.rb
+	# config/environment.rb
+
 	ruby script/server
 	# Open http://localhost:3000 in your browser
 
 Users ability
 --------------------------------------
 
-All user can watch and upload photo.
+All users can watch and upload photo.
 
 Admins interface
 --------------------------------------
 
 Admin part is available at the following url http://localhost:3000/common_admins/login. Admin can upload photos and Approve/Edit/Delete users and existing photos.
 Admin interface is extremely minimalistic at the moment.
+
+to access as admin to create a database record:
+insert into constants(name, value) values('admin_password', '********');
 
 SEO
 --------------------------------------
@@ -45,7 +53,7 @@ Project has great potential for SEO optimization. For any page you can set suita
 Localization
 --------------------------------------
 
-The site translated into Russian and English.
+The site translated into Russian and English languages.
 
 The sample site is available at [picolove](http://picolove.ru/en)
 
