@@ -37,7 +37,8 @@ Rails::Initializer.run do |config|
 
   config.i18n.default_locale = 'ru-RU'
 
-  config.gem "httparty"
+  config.gem "httparty", '0.7.7'
+  config.gem 'russian', :source => 'http://gemcutter.org', :version => '0.2.7'
   gem 'will_paginate', '2.3.11'
   
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
