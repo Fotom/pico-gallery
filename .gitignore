@@ -1,7 +1,8 @@
 # public
 tags
 public/system/*
-log/*
+log/**/*
+log
 tmp/*
 db/cstore/**
 db/sphinx/**
