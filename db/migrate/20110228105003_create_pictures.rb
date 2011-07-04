@@ -10,6 +10,10 @@ class CreatePictures < ActiveRecord::Migration
       t.string :photo_file_name
       t.string :photo_content_type
       t.integer :photo_file_size
+      t.integer :photo_cached_width_original
+      t.integer :photo_cached_height_original
+      t.integer :photo_cached_width_thumb
+      t.integer :photo_cached_height_thumb
 
       t.integer :type_id, :default => 1, :null => false
       t.boolean :is_approved
