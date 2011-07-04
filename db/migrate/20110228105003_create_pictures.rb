@@ -14,6 +14,8 @@ class CreatePictures < ActiveRecord::Migration
       t.integer :photo_cached_height_original
       t.integer :photo_cached_width_thumb
       t.integer :photo_cached_height_thumb
+      t.integer :photo_cached_width_resized
+      t.integer :photo_cached_height_resized
 
       t.integer :type_id, :default => 1, :null => false
       t.boolean :is_approved
