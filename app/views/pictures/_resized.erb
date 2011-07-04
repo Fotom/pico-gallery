@@ -10,8 +10,8 @@
   <%= image_tag picture.photo.url(:resized),
     :alt    => alt_for_picture(picture),
     :title  => title_for_picture(picture),
-    :width  => picture.photo_cached_width_original,
-    :height => picture.photo_cached_height_original %>
+    :width  => picture.photo_cached_width_resized,
+    :height => picture.photo_cached_height_resized %>
   <br/>
   <%= alt_for_picture(picture) %>
 </div>
