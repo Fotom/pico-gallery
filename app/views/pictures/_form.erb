@@ -1,5 +1,8 @@
 <%= custom_error_messages_for 'picture' %>
 
+<p><%= t("picture_view.short_description") %></p>
+<p><%= f.text_field :subject %></p>
+
 <p><%= t("picture_view.picture") %></p>
 <p><%= f.file_field(:photo) %></p>
 

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_part_names
   before_filter :get_newest_photo
   helper :all # include all helpers, all the time
+  helper_method :is_default_locale?, :is_ru_locale?, :picture_subject_for_default_locale
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :set_locale_from_url
@@ -35,6 +36,19 @@ class ApplicationController < ActionController::Base
 
   def is_admin?
     session[:is_admin] && (session[:is_admin] == 'admins session') ? true : false
+  end
+
+  def is_default_locale?
+    I18n.default_locale.to_s == I18n.locale.to_s
+  end
+
+  def is_ru_locale?(locale)
+    locale == 'ru-RU'
+  end
+
+  def picture_subject_for_default_locale(picture, h = {:with_comma => false})
+    is_default_locale? && !picture.subject.blank? ?
+      (picture.subject + (h[:with_comma] ? ', ' : '')) : ''
   end
 
 end

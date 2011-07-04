@@ -6,9 +6,21 @@ class Picture < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = Constant::DEFAULT_PER_PAGE_ELEMENTS
 
+  styles_hash = {:thumb  => "160x160>"}
+
+  if Constant::ENABLE_WATERMARK
+    styles_hash[:resized] = {
+      :geometry => "800x800>",
+#      :watermark_path => "#{RAILS_ROOT}/public/images/watermark_ladymind_small.png",
+      :watermark_path => "#{RAILS_ROOT}/public/images/watermark_picolove_small.png",
+      :position => "SouthEast" }
+  else
+    styles_hash[:resized] = {:geometry => "800x800>"}
+  end
+
   has_attached_file :photo,
-    :styles => {
-      :thumb  => "160x160>" },
+    :processors => [:watermark],
+    :styles => styles_hash,
     :path => ":rails_root/public/images/:class/:attachment/:id/:style_:basename.:extension",
     :url => "/images/:class/:attachment/:id/:style_:basename.:extension"
 
@@ -33,6 +45,15 @@ class Picture < ActiveRecord::Base
   def approve
     self.is_approved = true
     self.save!
+  end
+
+  before_create :set_width_and_height
+
+  def set_width_and_height
+    self.photo_cached_width_original = self.photo.width
+    self.photo_cached_height_original = self.photo.height
+    self.photo_cached_width_thumb = self.photo.width(:thumb)
+    self.photo_cached_height_thumb = self.photo.height(:thumb)
   end
 
 end

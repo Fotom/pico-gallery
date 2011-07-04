@@ -18,14 +18,24 @@ class PicturesController < ApplicationController
     render :template => 'pictures/index'
   end
 
+  def list_new
+    @title = t("picture_controller.list_new.title")
+    @page_keywords = t("picture_controller.list_new.keywords")
+    @page_description = t("picture_controller.list_new.description")
+    @content_text = t("header_info.list_new_pictures")
+    index
+  end
+
   def new
+    @page_keywords = t("layout.new_picture_keywords")
+    @page_description = t("layout.new_picture_description")
     @content_text = t("header_info.new_picture")
     @picture = Picture.new(params[:picture])
   end
 
   def create
     new
-    @picture.subject = ''
+    @picture.subject ||= ''
     @picture.part_id = params[:part_id]
     @picture.type_id = Picture::PICTURE
     @picture.is_approved = false
@@ -35,6 +45,15 @@ class PicturesController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def show
+    @picture = Picture.find(params[:id])
+    @page_keywords = t("part_names.#{@picture.part.id}", :default => @picture.part.name)  + ', ' +
+      t("picture_view.show_keywords")
+    @page_description = picture_subject_for_default_locale(@picture, {:with_comma => true}) + 
+      t("part_names.#{@picture.part.id}", :default => @picture.part.name)  + ', ' +
+      t("picture_view.show_description")
   end
 
   private

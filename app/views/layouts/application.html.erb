@@ -3,6 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name='yandex-verification' content='7ebeb1c2b846415e' />
+    <meta name="keywords" content="<%= fix_symbols(@page_keywords || build_page_element("keywords"), cnt = 250) %>" />
+    <meta name="description" content="<%= fix_symbols(@page_description || build_page_element("description"), cnt = 230) %>" />
     <link rel="shortcut icon" href="/flower.ico" />
     <%= title :disable_site => true, :separator => "-", :reverse => true, :site => t("layout.title") %>
     <%= stylesheet_link_tag 'common' %>
@@ -10,7 +12,7 @@
     <%= javascript_include_tag 'application.js' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
     <%= javascript_include_tag 'facebox.js' %>
-    <!--Social buttons-->
+    <!-- Social buttons -->
     <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
     <script type="text/javascript">
       $.facebox.settings.closeImage = '/images/closelabel.png'
@@ -20,6 +22,12 @@
         })
       })
     </script>
+    <!-- VK.com social button -->
+    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?32"></script>
+    <script type="text/javascript">
+      VK.init({apiId: 2402577, onlyWidgets: true});
+    </script>
+    <!-- Google analytics -->
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-19307316-3']);
@@ -48,10 +56,10 @@
           <div style="padding-left: 5px; margin-top: -77px;">
             <%= link_to image_tag("/images/logo_small.png"), :controller => 'pictures', :id => nil %>
           </div>
-         <div style="float: right; margin-top: -67px; padding: 0px 12px 0px 0px;">
-           <a href="/en"><img alt="English" height="12" src="/picto/en.png" title="English" width="16" /></a>
-           <a href="/"><img alt="Русский" height="12" src="/picto/ru.png" title="Русский" width="16" /></a>
-         </div>
+          <div style="float: right; margin-top: -67px; padding: 0px 12px 0px 0px;">
+            <a href="/en"><img alt="English" height="12" src="/picto/en.png" title="English" width="16" /></a>
+            <a href="/"><img alt="Русский" height="12" src="/picto/ru.png" title="Русский" width="16" /></a>
+          </div>
         </td>
       </tr>
       <tr>
@@ -70,7 +78,7 @@
                         <% end %>
                       </ul>
                       <br/>
-                      <h3 class="common_center"><%= t("layout.new") %></h3>
+                      <h3 class="common_center"><%= link_to t("layout.new"), :controller => 'pictures', :action => 'list_new' %></h3>
                       <br/>
                       <% if !@newest_pictures.blank? %>
                         <table width="100%">
@@ -79,15 +87,20 @@
                             <tr>
                               <td></td>
                               <td>
-                                <div>
+                                <div style="background-color: white;">
                                   <% if picture && picture.photo && picture.photo.exists? %>
-                                    <div class="ngg-gallery-thumbnail">
-                                      <a href="<%= picture.photo.url() %>" rel="facebox" class="thickbox">
-                                        <%= image_tag picture.photo.url(:thumb) %>
-                                      </a>
-                                    </div>
-                                  <% end %>
-                                </div><br/>
+                                    <div class="ngg-gallery-thumbnail-box">
+                                      <div class="ngg-gallery-thumbnail">
+                                        <div style="width: 167px;background-color: white;">
+                                          <div style="width: 100%; margin:auto;" align="center">
+                                            <a href="<%= picture.photo.url(:resized) %>" rel="facebox" class="thickbox">
+                                              <%= image_tag picture.photo.url(:thumb) %>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    <% end %>
+                                  </div></div><br/>
                               </td>
                               <td></td>
                             </tr>
@@ -95,7 +108,7 @@
                         </table>
                       <% end %>
                       <br/>
-                      <div class="common_center"><%= link_to t("layout.add_pictures"), :controller => 'pictures', :action => 'new' %></div>
+                      <div class="common_center"><%= link_to image_tag('/picto/add.gif') + " " + t("layout.add_pictures"), {:controller => 'pictures', :action => 'new'}, {:class=> "bold green"} %></div>
                     </td>
                   </tr>
                 </table>

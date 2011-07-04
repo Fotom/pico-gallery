@@ -6,5 +6,5 @@
   <%= image_tag @picture.photo.url(:thumb) %>
   <br/>
   <p><%= t("picture_view.orig") %>:</p>
-  <%= image_tag @picture.photo.url() %>
+  <%= image_tag @picture.photo.url(:resized) %>
 <% end %>

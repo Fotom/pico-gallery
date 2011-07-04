@@ -3,12 +3,17 @@
 <% if !@pictures.blank? %>
   <%= will_paginate @pictures, :previous_label => t("will_paginate.back"), :next_label => t("will_paginate.next") %>
 
-  <!--Social button-->
-  <% if params[:locale] == 'ru-RU' %>
+  <!--Social button mir.mail.ru-->
+  <% if is_ru_locale?(params[:locale]) %>
     <div style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;">
       <a target="_blank" class="mrc__plugin_like_button" href="http://connect.mail.ru/share" data-mrc-config="{'type' : 'button', 'width' : '150'}">Нравится</a>
       <script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
     </div>
+    <!-- vk.com social button -->
+    <div id="vk_like" style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;"></div>
+    <script type="text/javascript">
+      VK.Widgets.Like("vk_like", {type: "10"});
+    </script>
   <% end %>
 
   <br/>
@@ -18,11 +23,26 @@
         <% for picture in @pictures %>
           <span>
             <% if picture.photo.exists? %>
-              <div class="ngg-gallery-thumbnail-box" style="height: 170px;">
+              <div
+                onmouseout="$(this).delay(1800).find('.link_short_desc').hide();"
+                onmouseover="$(this).find('.link_short_desc').show();"
+                class="ngg-gallery-thumbnail-box" style="height: 190px; width: 190px;">
                 <div class="ngg-gallery-thumbnail">
-                  <a href="<%= picture.photo.url() %>" rel="facebox" class="thickbox">
-                    <%= image_tag picture.photo.url(:thumb) %>
-                  </a>
+                  <div style="width: 180px;">
+                    <div style="width: 100%; margin:auto;" align="center">
+                      <a  href="<%= picture.photo.url(:resized) %>" rel="facebox" class="thickbox">
+                        <%= image_tag picture.photo.url(:thumb),
+                          :alt    => alt_for_picture(picture),
+                          :title  => title_for_picture(picture),
+                          :width  => picture.photo_cached_width_thumb,
+                          :height => picture.photo_cached_height_thumb
+                      %>
+                      </a>
+                      <div style="display: none; padding: 0 0 7px 0; margin-top: -4px;" class="link_short_desc">
+                        <%= link_to short_picture_description(picture), :controller => 'pictures', :action => 'show', :id => picture.id %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             <% end %>
