@@ -1,0 +1,27 @@
+<% if @picture.photo.exists? %>
+
+  <%= render :partial => "resized", :locals => { :picture => @picture, :is_link_to_show_picture => false } %>
+
+  <!--Social button-->
+  <% if is_ru_locale?(params[:locale]) %>
+    <br/>
+    <table style="width: 50px;">
+      <tr>
+        <td align="left">
+          <div>
+            <a target="_blank" class="mrc__plugin_like_button" href="http://connect.mail.ru/share" data-mrc-config="{'type' : 'button', 'width' : '150'}">Нравится</a>
+            <script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
+          </div>
+        </td>
+        <td align="left">
+          <!-- vk.com social button -->
+          <div id="vk_like"></div>
+          <script type="text/javascript">
+            VK.Widgets.Like("vk_like", {type: "10"});
+          </script>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+
+<% end %>

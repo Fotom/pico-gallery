@@ -1,0 +1,17 @@
+<div>
+  <%= link_to t("common.site_text_abbreviation"), :controller => 'pictures', :action => 'index', :id => nil %>
+  &rarr;
+  <%= link_to t("part_names.#{picture.part.id}", :default => picture.part.name), {:controller => 'pictures', :action => 'list', :id => picture.part_id} %>
+  <% if is_link_to_show_picture %>
+    &rarr;
+    <%= link_to t("picture_view.show"), {:controller => 'pictures', :action => 'show', :id => picture.id} %>
+  <% end %>
+  <br/><br/>
+  <%= image_tag picture.photo.url(:resized),
+    :alt    => alt_for_picture(picture),
+    :title  => title_for_picture(picture),
+    :width  => picture.photo_cached_width_original,
+    :height => picture.photo_cached_height_original %>
+  <br/>
+  <%= alt_for_picture(picture) %>
+</div>

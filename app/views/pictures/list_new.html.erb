@@ -1,0 +1,18 @@
+<% if !@pictures.blank? %>
+  <table class="width_100">
+    <tr>
+      <td align="left">
+        <%= link_to image_tag('/picto/add.gif') + " " + t("layout.add_pictures"), {:controller => 'pictures', :action => 'new'}, {:class=> "bold green"} %>
+        <br/><br/>
+      </td>
+    </tr>
+    <% for picture in @pictures %>
+      <tr>
+        <td align="center">
+          <%= render :partial => "resized", :locals => { :picture => picture, :is_link_to_show_picture => true } %>
+          <br/><br/><br/>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
