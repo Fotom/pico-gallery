@@ -54,6 +54,8 @@ class Picture < ActiveRecord::Base
     self.photo_cached_height_original = self.photo.height
     self.photo_cached_width_thumb = self.photo.width(:thumb)
     self.photo_cached_height_thumb = self.photo.height(:thumb)
+    self.photo_cached_width_resized = self.photo.width(:resized)
+    self.photo_cached_height_resized = self.photo.height(:resized)
   end
 
 end
