@@ -104,6 +104,12 @@ en:
 
   # for picolove only
   header_info:
+    list_new_pictures: "Here you can view a list of new pictures of love from all sections.
+       Pictures submitted by users and uploaded to this page, you can see them in original, large format.
+       If you own a large collection of beautiful images of love and you think she might like the others,
+       then use 'Add pictures' and we will gladly approve them and anyone will be able to see and appreciate.
+       <br/> <br/>
+       Together, we make the world more beautiful!"
     new_picture: "You can add a new picture of the love that you like and it will appear in this section, if it is approved by the administration"
     index_welcome: "This site contains only images of love that will lift your spirits and provide a great excuse to really think about what is love and what it is. The site contains lots of pictures of love, which are constantly being added. There is a fairly wide variety of topics with images, hearts, animated images of love, pictures and drawings of couples in love, love, poverty among our younger brothers, a variety of labels, cards and angels.
             <br/> <br/>
@@ -127,6 +133,12 @@ en:
     picture_approved: "Failed to approve the picture"
 
   errors_on_create: "Following error"
+
+  picture_controller:
+    list_new:
+      title: "New Images of love"
+      keywords: "new pictures of love, a list of new pictures of love, the most recent images of love"
+      description: "A list of the newest uploaded images of love in large format and a single list"
 
   picture_model:
     error:
@@ -158,6 +170,10 @@ en:
     add: "Create picture"
     preview: "Preview"
     orig: "Large picture"
+    short_description: "Short description"
+    show: "show"
+    show_description: "show one image in good quality on the theme of love"
+    show_keywords: "great pictures, love the bright pictures, sunny pictures, photos emotional, loving couples"
 
   form:
     save: "Save"
@@ -177,11 +193,17 @@ en:
     new: "New"
     add_pictures: "Add pictures"
     copyright: "Remarks and bugs to send email.for.oleg@gmail.com"
+    new_picture_keywords: "add pictures, create love, upload your photos about love, and share pictures"
+    new_picture_description: "A special page to add your favorite pictures and beautiful for all users without login and register on the site"
 
   not_here_content: "See the beautiful pictures and enjoy the sunshine, raspahnite all doors to love!"
   not_here_title: "The best pictures of love"
+  not_here_keywords: "pictures of love, the best photo, beautiful animations, colorful hearts, pink paintings, delicate images"
+  not_here_description: "The best collection of images of love, especially for girls beautiful pictures, drawings and postcards with the words"
   default_content: "Here you will find the best selection of pictures of a beautiful feeling - love"
-   
+
+  my_word: "my"
+
   seo_pages:
     pictures:
       index:
@@ -194,33 +216,56 @@ en:
           title_2: "Picture of love"
           title_3: "Pictures of love beautiful"
           title_4: "Pictures about love download, free pictures of love"
+          keywords_1: "Pictures of love, meaning of love in the pictures, beautiful labels, hearts, angels, love, love animals, friendship and affection"
+          description_1: "A large collection of the best images of love and tenderness, photos carefully selected set of users"
       list:
         # part_id
         "1":
           page_2: "Here you can see pictures of hearts and the ways of love with them."
           title_1: "Hearts Pictures"
           title_2: "Beautiful pictures of hearts, love pictures"
+          keywords_1: "hearts, love hearts, two halves of a whole picture of hearts, icons, hearts, hearts, free download"
+          description_1: "section with lots of exclusive and brightest hearts. Hearts and their pictures at any exquisite taste"
         "2":
           page_2: "The site of love and all its possible manifestations, you can download free animated gifs of love. If you have experience in creating animation, you can create these images yourself, using a special graphics program and save them in gif format."
           page_3: "Guest books can be an important part of your communication, so in this section you can find nice pictures for them."
           title_1: "Animated pictures of love"
           title_2: "Beautiful animation, animation, free download"
           title_3: "Animated pictures for the guest book, Beautiful animated pictures"
+          keywords_1: "animated pictures, SIFCO, brilliant picture of love, flickering images, vivid pictures of love"
+          description_1: "A selection of animated images of love, which enhance mood and delight the eye. Figures in gif format of Love"
         "3":
           title_1: "He and she pictures"
           title_2: "He and she pictures, loving couples, he and she love"
+          keywords_1: "he and she, loving couples, pictures of couples kissing couple, two close friends"
+          description_1: "category for those seeking or already found my life partner. All about the love between two people to each other"
         "4":
           title_1: "Animals and the love of love pictures of animals"
+          keywords_1: "love between animals, love for animals, photos of animals, the female and cub, the mother and child pictures"
+          description_1: "All the pictures of the love of animals and between animals. Photo fluffy baby animals"
         "5":
           title_1: "Kissing Pictures"
           title_2: "Pictures of kissing lips Pictures"
+          keywords_1: "Pictures with kisses, loving lips kissing girls kissing photos, couples kiss, a hug"
+          description_1: "Photos of lovers kissing in adults. Passionate and very soft and tender images of male and female lips"
         "6":
           title_1: "Pictures from the angels, love and angels"
+          keywords_1: "Pictures of angels, photo keepers of love, the angels of love pictures of children of the angels"
+          description_1: "Angels and protects a human love. pictures of angels and the little kiddies beautiful little angels"
         "7":
           title_1: "Pictures of love with the words"
+          keywords_1: "pictures with words about love, love, stickers, photo with the words"
+          description_1: "Here you can find pictures and photos of love with beautiful inscriptions, which cause a storm of emotion and excitement"
         "8":
           title_1: "Postcards of love"
           title_2: "Love Pictures, Pictures of girls, pictures of love for free"
+          keywords_1: "love cards, postcards to his beloved, beautiful postcards"
+          description_1: "In the best collection of postcards which you can download the show or your favorite girl"
+        "9":
+          title_1: "Images of Love in the style of Anime"
+          title_2: "anime, the best pictures of love"
+          keywords_1: "anime love pictures, rain pictures anime naruto love pictures"
+          description_1: "Very large collection of pictures depicting the love of anime. Drawn loving couples"
 
   part_names:
     "1": "Hearts"
@@ -247,3 +292,11 @@ en:
     back: "&laquo; back"
     next: "next &raquo;"
 
+  common:
+    general_keyword: "love"
+    site_text_abbreviation: "Most cool pictures of love"
+
+
+
+
+    
