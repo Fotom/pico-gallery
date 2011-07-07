@@ -5,15 +5,15 @@
 
   <!--Social button mir.mail.ru-->
   <% if is_ru_locale?(params[:locale]) %>
+    <!-- vk.com social button -->
+    <div id="vk_like" style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;"></div>
+    <script type="text/javascript">
+      VK.Widgets.Like("vk_like", {type: "10", width: 210});
+    </script>
     <div style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;">
       <a target="_blank" class="mrc__plugin_like_button" href="http://connect.mail.ru/share" data-mrc-config="{'type' : 'button', 'width' : '150'}">Нравится</a>
       <script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
     </div>
-    <!-- vk.com social button -->
-    <div id="vk_like" style="float: right; margin-top: -22px; padding: 0px 0px 0px 0px;"></div>
-    <script type="text/javascript">
-      VK.Widgets.Like("vk_like", {type: "10"});
-    </script>
   <% end %>
 
   <br/>
