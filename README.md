@@ -60,4 +60,4 @@ The sample site is available at [picolove](http://picolove.ru/en)
 Authors
 --------------------------------------
 
-Personal blog author: [Malykh Oleg](http://malyh.com/) - blog in russian
+Personal blog author: [Malykh Oleg](http://es0.ru/) - blog in russian
